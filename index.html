@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LogSphere | Upload Logs</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+    <div class="noise-layer"></div>
+
+    <header class="top-nav">
+      <div class="brand">
+        <div class="brand-logo">L</div>
+        <div>
+          <h2>LogSphere</h2>
+          <p>Cloud Log Intelligence</p>
+        </div>
+      </div>
+
+      <a href="dashboard.html" class="nav-btn">Open Dashboard</a>
+    </header>
+
+    <main class="hero-grid">
+      <section class="hero-content reveal">
+        <div class="tag-pill">AI Inspired Monitoring UI</div>
+        <h1 class="hero-heading">
+          Monitor Logs With a
+          <span>Luxury Analytics Experience</span>
+        </h1>
+        <p class="hero-copy">
+          Upload server log files and transform raw entries into a polished visual dashboard.
+          Built for modern cloud monitoring demos, presentations, and project showcases.
+        </p>
+
+        <div class="feature-cards">
+          <div class="mini-feature">
+            <div class="mini-icon">✦</div>
+            <div>
+              <h3>Elegant Visuals</h3>
+              <p>Premium gradients, glassmorphism and layered lighting.</p>
+            </div>
+          </div>
+
+          <div class="mini-feature">
+            <div class="mini-icon">⚡</div>
+            <div>
+              <h3>Fast Overview</h3>
+              <p>Surface errors, warnings and info logs instantly.</p>
+            </div>
+          </div>
+
+          <div class="mini-feature">
+            <div class="mini-icon">📈</div>
+            <div>
+              <h3>Trend Ready</h3>
+              <p>Present analytics in a clean executive-style dashboard.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="upload-side reveal">
+        <div class="premium-card upload-card">
+          <div class="upload-card-top">
+            <div class="card-badge">Secure Upload Zone</div>
+            <h2>Upload Log File</h2>
+            <p>
+              Select a .log or .txt file to continue. Your dashboard will visualize
+              errors, warnings and info trends beautifully.
+            </p>
+          </div>
+
+          <div class="mock-visual">
+            <div class="mock-window">
+              <div class="mock-header">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="mock-bars">
+                <div class="mock-panel left-panel"></div>
+                <div class="mock-chart">
+                  <div class="bar bar-1"></div>
+                  <div class="bar bar-2"></div>
+                  <div class="bar bar-3"></div>
+                  <div class="bar bar-4"></div>
+                  <svg viewBox="0 0 300 120" class="mock-line">
+                    <path d="M10 95 C45 80, 70 85, 105 60 S170 30, 210 45 S255 28, 290 18"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <label for="logFile" class="upload-dropzone">
+            <div class="drop-icon-wrap">
+              <div class="drop-icon">⬆</div>
+            </div>
+            <h3>Drag & Drop or Browse</h3>
+            <p>Choose a log file from your system</p>
+            <input type="file" id="fileInput" accept=".txt,.log,.pdf,.doc,.docx" />
+            <span class="browse-chip">Browse File</span>
+          </label>
+
+          <button onclick="uploadLogFile()">Upload Log</button>
+          <p id="uploadMessage" class="upload-status"></p>
+
+          <div class="upload-footer-note">
+            Tip: After upload, open the dashboard to view metrics and error trends.
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

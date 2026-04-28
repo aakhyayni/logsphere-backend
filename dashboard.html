@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LogSphere | Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body onload="loadDashboard()">
+  <div class="page-shell">
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+    <div class="noise-layer"></div>
+
+    <header class="top-nav dashboard-nav">
+      <div class="brand">
+        <div class="brand-logo">L</div>
+        <div>
+          <h2>LogSphere</h2>
+          <p>Realtime Monitoring Dashboard</p>
+        </div>
+      </div>
+
+      <a href="upload.html" class="nav-btn">Back to Upload</a>
+    </header>
+
+    <main class="dashboard-layout reveal">
+      <section class="dashboard-hero premium-card">
+        <div>
+          <div class="tag-pill">Performance Overview</div>
+          <h1 class="dashboard-title">System Log Dashboard</h1>
+          <p class="dashboard-copy">
+            View categorized logs, spot unusual spikes, and present your monitoring results
+            with a premium data experience.
+          </p>
+        </div>
+
+        <div class="hero-side-cards">
+          <div class="tiny-panel">
+            <span class="tiny-label">System Health</span>
+            <strong>Stable</strong>
+          </div>
+          <div class="tiny-panel">
+            <span class="tiny-label">Alerts</span>
+            <strong>Active Tracking</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats-panel">
+        <div class="stat-box stat-total floating-card">
+          <div class="stat-top">
+            <span class="stat-ring">◎</span>
+            <span class="stat-name">Total Logs</span>
+          </div>
+          <h2 id="totalLogs">0</h2>
+          <p>Complete processed entries</p>
+        </div>
+
+        <div class="stat-box stat-error floating-card">
+          <div class="stat-top">
+            <span class="stat-ring">✖</span>
+            <span class="stat-name">Errors</span>
+          </div>
+          <h2 id="errorLogs">0</h2>
+          <p>Critical issues detected</p>
+        </div>
+
+        <div class="stat-box stat-warning floating-card">
+          <div class="stat-top">
+            <span class="stat-ring">▲</span>
+            <span class="stat-name">Warnings</span>
+          </div>
+          <h2 id="warningLogs">0</h2>
+          <p>Potential risk indicators</p>
+        </div>
+
+        <div class="stat-box stat-info floating-card">
+          <div class="stat-top">
+            <span class="stat-ring">●</span>
+            <span class="stat-name">Info</span>
+          </div>
+          <h2 id="infoLogs">0</h2>
+          <p>Normal system activity logs</p>
+        </div>
+      </section>
+
+      <section class="content-grid">
+        <div class="premium-card chart-panel">
+          <div class="section-head">
+            <div>
+              <span class="sub-label">Visual Analytics</span>
+              <h3>Error Trend</h3>
+            </div>
+            <div class="section-chip">Weekly Pattern</div>
+          </div>
+          <canvas id="errorChart"></canvas>
+        </div>
+
+        <div class="premium-card insight-panel">
+          <div class="section-head">
+            <div>
+              <span class="sub-label">Monitoring Notes</span>
+              <h3>Quick Insights</h3>
+            </div>
+          </div>
+
+          <div class="insight-list">
+            <div class="insight-item">
+              <span class="insight-dot dot-red"></span>
+              <div>
+                <h4>Error Focus</h4>
+                <p>Watch for sudden chart spikes to identify unstable components.</p>
+              </div>
+            </div>
+
+            <div class="insight-item">
+              <span class="insight-dot dot-yellow"></span>
+              <div>
+                <h4>Warning Review</h4>
+                <p>Warnings often reveal pressure before a major failure happens.</p>
+              </div>
+            </div>
+
+            <div class="insight-item">
+              <span class="insight-dot dot-green"></span>
+              <div>
+                <h4>Healthy Activity</h4>
+                <p>Info logs confirm routine operations and successful processes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="premium-card logs-panel">
+        <div class="section-head">
+          <div>
+            <span class="sub-label">Recent Activity</span>
+            <h3>Latest Log Entries</h3>
+          </div>
+          <div class="section-chip">Live Table</div>
+        </div>
+
+        <div class="table-shell">
+          <table>
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Message</th>
+              </tr>
+            </thead>
+            <tbody id="logTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

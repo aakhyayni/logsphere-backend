@@ -1,0 +1,5 @@
+ERROR Something broke
+WARNING Disk almost full
+INFO System running
+INFO User logged in
+ERROR Database failed
